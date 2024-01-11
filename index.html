@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, [Her Name]!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fce4ec;
+        }
+
+        #container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #e91e63;
+        }
+
+        #gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .thumbnail {
+            margin: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #birthdayMessage {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Happy Birthday, Nonu<3<3!</h1>
+        <div id="birthdayMessage">
+            <p>Wishing you a day filled with love, joy, and amazing moments together.</p>
+        </div>
+        <div id="gallery">
+            <!-- Add more images as needed -->
+            <div class="thumbnail" onclick="playSong('./songs/song1.mp3', 'Happy Birthday! I love you so much. I am so sorry that we fight a lot. It is just because we love each other so much. Yaar nonu try to underatand that esa to nhi na ki mai humesha hi glt baby. I always keep trying my best hojati hai mere se glti sorry yaar.')">
+                <img src="./images/image1.jpg" alt="Image 1">
+            </div>
+            <div class="thumbnail" onclick="playSong('./songs/song2.mp3', 'Cheers to another year! Have a fantastic birthday. Tu aur tere friends bahar jaana and khana kuch yummy and healthy. bahar nhi to college me hi shi and dont think about ki past m kya hua future m kya hoga. live in the present and enjoy it. I am with you always<3. You are so beautiful sch m but kbhi kbhi bohot zyada gussa krti hai (sad emo sad emo) ')">
+                <img src="./images/iamge2.jpg" alt="Image 2">
+            </div>
+            <div class="thumbnail" onclick="playSong('./songs/song3.mp3', 'May your day be filled with laughter and joy! Happy Birthday. 2023 yaar hum dono k lie ek roller coaster ride ki trh rha puura and humara 24 bhi acha shuru nhi hua. But i will keep trying ki i make it a wonderful year for you. whatever i say out of my mouth i mean each and everything. i want to buy expensive shits for you but i dont have money atm. esa nhi yaar ki mai bs bolta kuch krta nhi. it is never like that bb. i always try ki i provide you with each and evrything, but smjha kr mai bhi gusse m hojata kbhi kbhar mko bhi aaata gussa sch m bohit contril krta hu humesha schi m. I love you the most(yaar sch m maine paise bohot try kri bchane in the and sb ud gye bche vhi zra se 1200) and meri glti ye ki mko yaad nhi tha straightner konsa hai sch m meri glti and i accept it schi m sorry. maybe i am bad at planning things and stuffs but it dosent means that i dont care for your day. maine to ese hi socha tha hum milke kr denge order or ajaega, maine ese nhi socha tha ki phle se krke aaj mngwake surprise ho skta it is a bad thing but mere dimmaag m ese hi plan hua sb to mai ese hi execute kia. sorry , so sorry. MAI NHI HU ROMANTIC SBKI TRH MAI BOHOT BORING HU I EVEN KNOW THAT BUT I LOVE YOU SO MUCH AND I DO CARE FOR YOU A LOT, I AM SO SORRY MERI VJH S TKO ITNA GNDA FEEL HOTA. I HOPE I COULD FIX THAT(fix that in sense ki kaash mai ye sb chize jissse tko gnda feel hota piiche jaake thik kr skta. aage aane vaale time me krunga hi but maine ye past k lie kha) AND I HOPE I BECOME THE MAN OF WORTH LOVING YOU THE MOST<3')">
+                <img src="./images/iamge3.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentAudio = null;
+
+        function playSong(song, message) {
+            if (currentAudio) {
+                currentAudio.pause();
+            }
+
+            var audio = new Audio(song);
+            audio.play();
+            currentAudio = audio;
+
+            setTimeout(function() {
+                alert(message);
+            }, 100); // Show a separate message for each image
+        }
+    </script>
+</body>
+</html>
